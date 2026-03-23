@@ -33,8 +33,10 @@ Use this as the default implementation workflow.
 9. Prefer tests before or immediately after the implementation when the project supports them.
 10. Use local scripts for heavy output instead of dumping long logs into chat.
 11. Run `node scripts/run-project-checks.mjs --lint` after meaningful code changes.
-12. For high-risk diffs or pre-merge checks, run `/gemini-cross-check` for an external second opinion.
-13. Call `/memory-sync` if the work changed durable decisions, flows, or the TODO queue.
+12. When the task needs a durable handoff or persisted plan file, use `/dev-docs` or `/dev-docs-update`.
+13. For route, auth, proxy, or navigation changes, run `/route-smoke`.
+14. For high-risk diffs or pre-merge checks, run `/gemini-cross-check` for an external second opinion.
+15. Call `/memory-sync` if the work changed durable decisions, flows, or the TODO queue.
 
 ## Validation posture
 - Default to lint-first validation.

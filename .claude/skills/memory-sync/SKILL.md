@@ -26,3 +26,4 @@ Use this workflow after a meaningful task finishes or a session is about to end.
 - Prefer bullets over paragraphs.
 - Do not duplicate the same fact in multiple files unless the duplication is intentional.
 - Treat these files as the project's local second brain.
+- Do not treat this as the active-plan updater. Use `/dev-docs-update` when the task is still in flight and the working plan or TODO needs another pass.

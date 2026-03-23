@@ -23,7 +23,9 @@ Use this workflow when context isolation matters.
 2. Use built-in Explore or Plan when the next step is codebase research.
 3. Use `next-reviewer` for risk-first read-only review.
 4. Use `log-investigator` for read-only log triage.
-5. Use a separate worktree when:
+5. Use `plan-reviewer` before parallelizing a risky implementation plan.
+6. Use `code-architecture-reviewer` when the main risk is system shape, route boundaries, or long-term maintainability.
+7. Use a separate worktree when:
    - the change is large enough to deserve its own branch
    - you need a second dev server or parallel terminal flow
    - logs and test output would drown the main conversation

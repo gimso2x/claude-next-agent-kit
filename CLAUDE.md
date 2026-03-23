@@ -21,6 +21,17 @@ Prefer these slash skills for real work:
 - `/memory-sync`
 - `/parallel-worktree`
 
+Useful project commands:
+- `/dev-docs`
+- `/dev-docs-update`
+- `/route-smoke`
+
+Useful read-only agents:
+- `next-reviewer`
+- `log-investigator`
+- `plan-reviewer`
+- `code-architecture-reviewer`
+
 Working habits:
 - Start multi-file or high-risk work in Plan Mode first
 - For risky work, stop after the first draft plan and run `/plan-cross-check` before implementation

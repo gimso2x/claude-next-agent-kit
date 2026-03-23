@@ -79,6 +79,10 @@ function readPlanText(options) {
   const defaultFile = path.join(options.cwd, ".claude", "plans", "current-plan.md");
 
   if (explicitFile) {
+    const dir = path.dirname(explicitFile);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
     if (!fs.existsSync(explicitFile)) {
       throw new Error(`Plan file not found: ${explicitFile}`);
     }

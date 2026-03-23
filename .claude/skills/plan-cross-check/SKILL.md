@@ -13,7 +13,7 @@ Use this workflow after the first draft plan and before implementation.
 
 ## Workflow
 1. Draft the implementation plan in chat first.
-2. Persist the current plan to `.claude/plans/current-plan.md`.
+2. Persist the current plan to `.claude/plans/current-plan.md`, creating the file if it is missing.
 3. Run `node scripts/review-plan-with-gemini.mjs --json --file .claude/plans/current-plan.md`.
 4. Summarize the material critique only:
    - missing steps
@@ -32,3 +32,4 @@ Use this workflow after the first draft plan and before implementation.
 ## Notes
 - This mirrors the plan-review pattern shown in the advanced workflow material, but uses a lightweight local script instead of requiring a custom MCP server.
 - If `gemini` is missing or auth is not configured, briefly report that and continue with Claude-only planning.
+- If you want a durable plan scaffold first, run `/dev-docs`.

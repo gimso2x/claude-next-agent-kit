@@ -34,5 +34,6 @@ Use this workflow for review-only tasks. Stay read-only unless the user explicit
 
 ## Escalation
 - If confidence is low, say so clearly.
+- For architecture-heavy changes, ask `code-architecture-reviewer` for a read-only second pass.
 - For high-risk changes, run `/gemini-cross-check` or `node scripts/cross-check-with-gemini.mjs --json` as an external second opinion.
 - Treat Gemini output as critique input, not as the source of truth.
