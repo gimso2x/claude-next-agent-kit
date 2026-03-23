@@ -1,6 +1,6 @@
 ---
 name: session-bootstrap
-description: Prepare a fresh Claude coding session for a Next.js 16.2-style project. Use when starting new work, resuming after /clear, or when Claude needs to rebuild context from TODO, memory, and current workflow rules.
+description: Prepare a fresh Claude coding session for a Next.js 16.2-style project. Use when starting new work, resuming after /clear, or when Claude needs to rebuild context from TODO, memory, and current workflow rules. Trigger whenever the user opens a new session, says "where were we", "what's the status", "catch me up", or needs to orient before diving into work.
 ---
 
 # Session Bootstrap

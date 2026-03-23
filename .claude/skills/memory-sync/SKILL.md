@@ -1,6 +1,6 @@
 ---
 name: memory-sync
-description: Update the local second brain after meaningful work. Use when a task changes durable architecture, domain language, TODO state, or tradeoff decisions, and Claude should synchronize `.claude/TODO.md` and memory files instead of leaving knowledge only in chat history.
+description: Update the local second brain after meaningful work. Use when a task changes durable architecture, domain language, TODO state, or tradeoff decisions, and Claude should synchronize `.claude/TODO.md` and memory files instead of leaving knowledge only in chat history. Trigger whenever a session ends, a major task completes, the user says "save this", "update TODO", "remember this decision", or context should persist beyond the current conversation.
 ---
 
 # Memory Sync

@@ -1,4 +1,5 @@
 ---
+name: route-smoke
 description: Build a route-level smoke test checklist from changed files or a target route. Use after route, layout, page, proxy, auth, or navigation changes when you want a compact manual verification plan.
 argument-hint: [route, screen, or focus]
 ---

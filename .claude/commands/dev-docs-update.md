@@ -1,4 +1,5 @@
 ---
+name: dev-docs-update
 description: Update `.claude` working docs after progress, review, or context compaction. Use when the task moved forward and TODO, plan, or memory files need a compact refresh.
 argument-hint: [what changed]
 ---

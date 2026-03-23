@@ -1,6 +1,6 @@
 ---
 name: gemini-cross-check
-description: Run an external second-opinion review with Gemini CLI for a diff, staged changes, or a risky Next.js 16.2 change. Use when you want cross-model validation before merge, after Claude finishes an implementation, or when a review/debug result still feels uncertain.
+description: Run an external second-opinion review with Gemini CLI for a diff, staged changes, or a risky Next.js 16.2 change. Use when you want cross-model validation before merge, after Claude finishes an implementation, or when a review/debug result still feels uncertain. Trigger whenever the user says "get a second opinion", "cross-check", "Gemini review", "double-check with Gemini", or wants external validation on risky code before merging.
 ---
 
 # Gemini Cross Check

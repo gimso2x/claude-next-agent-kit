@@ -1,6 +1,6 @@
 ---
 name: parallel-worktree
-description: Choose between staying in the main session, using built-in or custom subagents, or splitting work into a git worktree. Use when tasks are large, output-heavy, parallelizable, or when review and debugging context should be isolated from the main conversation.
+description: Choose between staying in the main session, using built-in or custom subagents, or splitting work into a git worktree. Use when tasks are large, output-heavy, parallelizable, or when review and debugging context should be isolated from the main conversation. Trigger whenever the user says "split this work", "run in parallel", "isolate this", "separate branch", or the task is clearly too noisy or large for a single conversation thread.
 ---
 
 # Parallel Worktree
