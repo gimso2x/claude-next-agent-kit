@@ -132,3 +132,20 @@ Short version:
 - Feature task: `/feature` -> plan -> ask whether to run `/plan-cross-check` or implement now -> implement -> validate -> report
 - Bug: `/debug`
 - Review: `/review`
+
+## Antigravity compatibility
+
+- `.claude/` stays canonical for workflows, shared memory, plans, hooks, and scripts.
+- `.agents/` is the primary Antigravity wrapper layer for `skills`, `workflows`, and `rules`.
+- Shared state remains in:
+  - `.claude/plans/current-plan.md`
+  - `.claude/TODO.md`
+  - `.claude/memory/architecture.md`
+  - `.claude/memory/domain.md`
+  - `.claude/memory/decisions.md`
+- Antigravity entrypoints mirror the Claude workflow:
+  - `/start`
+  - `/feature`
+  - `/debug`
+  - `/review`
+  - `/plan-cross-check`
