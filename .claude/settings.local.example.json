@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "local-example": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "./mcp/example-server.mjs"
+      ],
+      "env": {
+        "PROJECT_ROOT": "."
+      }
+    }
+  }
+}

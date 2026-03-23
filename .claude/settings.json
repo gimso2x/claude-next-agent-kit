@@ -1,0 +1,102 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(**/.env*)",
+      "Edit(**/.env*)",
+      "Read(secrets/**)",
+      "Edit(secrets/**)",
+      "Edit(.next/**)",
+      "Edit(node_modules/**)",
+      "Edit(.git/**)",
+      "Edit(certificates/**)",
+      "Edit(dist/**)",
+      "Edit(build/**)",
+      "Edit(coverage/**)",
+      "Edit(**/*.pem)",
+      "Edit(**/*.key)",
+      "Edit(**/*.p12)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --input-type=module -e \"import { pathToFileURL } from 'node:url'; import path from 'node:path'; const root = process.env.CLAUDE_PROJECT_DIR || process.cwd(); await import(pathToFileURL(path.resolve(root, process.argv[1])).href);\" .claude/hooks/session-start.mjs"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --input-type=module -e \"import { pathToFileURL } from 'node:url'; import path from 'node:path'; const root = process.env.CLAUDE_PROJECT_DIR || process.cwd(); await import(pathToFileURL(path.resolve(root, process.argv[1])).href);\" .claude/hooks/guard-command.mjs"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --input-type=module -e \"import { pathToFileURL } from 'node:url'; import path from 'node:path'; const root = process.env.CLAUDE_PROJECT_DIR || process.cwd(); await import(pathToFileURL(path.resolve(root, process.argv[1])).href);\" .claude/hooks/guard-writes.mjs"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --input-type=module -e \"import { pathToFileURL } from 'node:url'; import path from 'node:path'; const root = process.env.CLAUDE_PROJECT_DIR || process.cwd(); await import(pathToFileURL(path.resolve(root, process.argv[1])).href);\" .claude/hooks/guard-writes.mjs"
+          }
+        ]
+      },
+      {
+        "matcher": "MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --input-type=module -e \"import { pathToFileURL } from 'node:url'; import path from 'node:path'; const root = process.env.CLAUDE_PROJECT_DIR || process.cwd(); await import(pathToFileURL(path.resolve(root, process.argv[1])).href);\" .claude/hooks/guard-writes.mjs"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --input-type=module -e \"import { pathToFileURL } from 'node:url'; import path from 'node:path'; const root = process.env.CLAUDE_PROJECT_DIR || process.cwd(); await import(pathToFileURL(path.resolve(root, process.argv[1])).href);\" .claude/hooks/post-checks.mjs",
+            "async": true
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --input-type=module -e \"import { pathToFileURL } from 'node:url'; import path from 'node:path'; const root = process.env.CLAUDE_PROJECT_DIR || process.cwd(); await import(pathToFileURL(path.resolve(root, process.argv[1])).href);\" .claude/hooks/post-checks.mjs",
+            "async": true
+          }
+        ]
+      },
+      {
+        "matcher": "MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --input-type=module -e \"import { pathToFileURL } from 'node:url'; import path from 'node:path'; const root = process.env.CLAUDE_PROJECT_DIR || process.cwd(); await import(pathToFileURL(path.resolve(root, process.argv[1])).href);\" .claude/hooks/post-checks.mjs",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}
