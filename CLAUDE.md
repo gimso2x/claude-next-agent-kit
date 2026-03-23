@@ -33,6 +33,8 @@ Read only what the current task needs:
 ## Working habits
 
 - 큰 작업은 plan을 먼저 보여주고 승인 후 진행
+- memory 파일이 비어 있거나 placeholder 위주면 첫 `/start` 또는 `/feature`에서 실제 사실로 초기 채우기
+- 이후에는 바뀐 durable fact만 memory에 업데이트
 - 구현 후 관련 검증을 실행하고 결과를 명확히 보고
 - `/clear` between major phases, `/compact` before context gets crowded
 - `/mcp` lean — disable unused servers

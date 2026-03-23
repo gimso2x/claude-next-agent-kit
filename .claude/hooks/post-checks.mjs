@@ -50,7 +50,7 @@ try {
     process.exit(0);
   }
 
-  const runnerPath = path.join(cwd, "scripts", "run-project-checks.mjs");
+  const runnerPath = path.join(cwd, ".claude", "scripts", "run-project-checks.mjs");
   if (!fs.existsSync(runnerPath)) {
     process.exit(0);
   }

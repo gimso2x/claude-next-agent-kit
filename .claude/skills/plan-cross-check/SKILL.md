@@ -20,7 +20,7 @@ Use this workflow after the first draft plan and before implementation.
    - Execution Steps
    - Risks
    - Validation
-3. Run `node scripts/review-plan-with-gemini.mjs --json --file .claude/plans/current-plan.md`.
+3. Run `node .claude/scripts/review-plan-with-gemini.mjs --json --file .claude/plans/current-plan.md`.
 4. Summarize only the material critique:
    - missing steps
    - hidden risks

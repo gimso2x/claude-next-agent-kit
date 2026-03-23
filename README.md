@@ -11,6 +11,7 @@ Reusable Claude Code kit for Next.js 16.2-style projects.
 - plan을 보여준 뒤, `바로 진행`할지 `/plan-cross-check`를 먼저 할지 한 번만 묻습니다.
 - 선택이 끝나면 Claude가 구현, 검증, 결과 보고까지 이어서 진행합니다.
 - 꼭 slash command를 정확히 안 써도 됩니다. 자연어로 말해도 대응되는 흐름을 타도록 설명을 넣어뒀습니다.
+- `plans`는 작업 시작 시 자동으로 채워지고, `memory`는 비어 있으면 처음에 seed하고 이후 바뀐 durable fact만 업데이트합니다.
 
 ### 1. 큰 작업 시작
 
@@ -28,7 +29,8 @@ Reusable Claude Code kit for Next.js 16.2-style projects.
 4. `이 plan으로 바로 진행할까요, 아니면 /plan-cross-check를 먼저 돌릴까요?` 라고 묻습니다.
 5. 사용자가 선택하면 Claude가 작업을 진행합니다.
 6. 작업 후 관련 검증을 실행합니다.
-7. 변경 내용, 검증 결과, 남은 리스크를 알려줍니다.
+7. 필요하면 `memory`와 `TODO`를 실제 사실로 초기 채우거나 갱신합니다.
+8. 변경 내용, 검증 결과, memory 업데이트 여부, 남은 리스크를 알려줍니다.
 
 이 흐름은 `새 세션`, `재개 작업`, `범위가 큰 기능`, `여러 파일을 건드리는 작업`에 적합합니다.
 
@@ -47,7 +49,8 @@ Reusable Claude Code kit for Next.js 16.2-style projects.
 3. `바로 진행`할지 `/plan-cross-check`를 먼저 할지 묻습니다.
 4. 사용자가 선택하면 Claude가 구현을 진행합니다.
 5. 구현 후 lint 중심으로 검증하고, 필요 시 더 좁은 회귀 확인을 합니다.
-6. 변경 파일, 검증 결과, 남은 리스크를 알려줍니다.
+6. 필요하면 `memory`와 `TODO`를 실제 사실로 초기 채우거나 갱신합니다.
+7. 변경 파일, 검증 결과, memory 업데이트 여부, 남은 리스크를 알려줍니다.
 
 이 흐름은 대부분의 기능 추가, UI 수정, 동작 변경에 기본값으로 쓰면 됩니다.
 
@@ -89,6 +92,7 @@ Reusable Claude Code kit for Next.js 16.2-style projects.
 - 작은 작업은 바로 `/feature`로 시작해도 됩니다.
 - `/plan-cross-check`는 선택사항입니다.
 - 복잡한 helper command를 직접 고를 필요 없이, 기본적으로는 위 4개만 쓰면 됩니다.
+- `memory`는 placeholder 상태면 첫 `/start`나 `/feature`에서 seed되고, 이후에는 바뀐 durable fact만 갱신됩니다.
 - 예:
   - "큰 작업 시작해줘" -> `/start`
   - "이 기능 추가해줘" -> `/feature`
@@ -115,7 +119,7 @@ Reusable Claude Code kit for Next.js 16.2-style projects.
 
 ## Windows and WSL
 
-- All hook and script logic lives in `.mjs` files.
+- All hook and script logic lives in `.mjs` files under `.claude/`.
 - If Claude runs inside WSL, install `node` inside WSL too.
 - If you want `/plan-cross-check`, install and authenticate `gemini` in the same environment where Claude runs.
 
