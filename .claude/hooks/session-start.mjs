@@ -52,7 +52,8 @@ function buildContext(projectRoot) {
     "- Use /clear between major phases and /compact before context gets crowded.",
     "- Keep /mcp lean and disable unused servers.",
     "- Prefer local scripts for heavy output, then summarize the result back into chat.",
-    "- Use /session-bootstrap when you want a fuller manual context rebuild."
+    "- Use /start when you want a fuller manual context rebuild.",
+    "- Natural language also works: large task -> /start, feature ask -> /feature, broken behavior -> /debug, review ask -> /review."
   ];
 
   if (todo) {
