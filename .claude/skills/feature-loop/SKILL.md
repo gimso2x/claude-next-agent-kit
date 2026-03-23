@@ -1,6 +1,6 @@
 ---
 name: feature-loop
-description: Run the main feature implementation loop for a Next.js 16.2-style project. Use for new features, scoped enhancements, refactors with user-visible behavior, and any coding task that should follow Plan Mode, small checkpoints, validation, and memory updates.
+description: Run the main feature implementation loop for a Next.js 16.2-style project. Use for new features, scoped enhancements, refactors with user-visible behavior, and any coding task that should follow Plan Mode, small checkpoints, validation, and memory updates. Trigger whenever the user says "add", "build", "implement", "create", "make", or describes any new functionality, UI change, or behavior modification, even if they don't explicitly mention "feature".
 ---
 
 # Feature Loop
@@ -17,7 +17,7 @@ Use this as the default implementation workflow.
 1. Start in Plan Mode for multi-file or high-risk work.
 2. Restate the requested outcome, success criteria, and the first checkpoint.
 3. Inspect similar code and affected surfaces before editing.
-4. Draft the implementation plan before editing.
+4. Draft the implementation plan before editing. Include success criteria, impacted files or surfaces, execution sequence, risks, and validation.
 5. If the task is multi-file, high-risk, or architecturally unclear, stop after the first plan draft and run `/plan-cross-check`.
 6. Update the plan with the material critique, then implement in slices.
 7. Check the Next.js 16.2 constraints that apply:
@@ -34,9 +34,11 @@ Use this as the default implementation workflow.
 10. Use local scripts for heavy output instead of dumping long logs into chat.
 11. Run `node scripts/run-project-checks.mjs --lint` after meaningful code changes.
 12. When the task needs a durable handoff or persisted plan file, use `/dev-docs` or `/dev-docs-update`.
-13. For route, auth, proxy, or navigation changes, run `/route-smoke`.
-14. For high-risk diffs or pre-merge checks, run `/gemini-cross-check` for an external second opinion.
-15. Call `/memory-sync` if the work changed durable decisions, flows, or the TODO queue.
+13. Run `/verify-change` after meaningful implementation slices or before merge as the compact first-pass gate.
+14. If `/verify-change` surfaces concerns or the diff is high-risk, follow with `/review-loop`.
+15. For route, auth, proxy, or navigation changes, run `/route-smoke`.
+16. For high-risk diffs or pre-merge checks, run `/gemini-cross-check` for an external second opinion.
+17. Call `/memory-sync` if the work changed durable decisions, flows, or the TODO queue.
 
 ## Validation posture
 - Default to lint-first validation.

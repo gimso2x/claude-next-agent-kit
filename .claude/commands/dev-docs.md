@@ -1,4 +1,5 @@
 ---
+name: dev-docs
 description: Create or refresh lightweight working docs for the current task. Use when starting a larger task and you want a durable plan, TODO updates, and memory touchpoints under `.claude/`.
 argument-hint: [task or focus]
 ---
@@ -15,8 +16,10 @@ Workflow:
 2. Use the current request plus `$ARGUMENTS` as the planning focus.
 3. Create or refresh `.claude/plans/current-plan.md` with:
    - Goal
+   - Success Criteria
    - Scope
-   - Plan
+   - Impacted Files or Surfaces
+   - Execution Sequence
    - Risks
    - Validation
    - Open Questions

@@ -1,11 +1,13 @@
 ---
 name: debug-loop
-description: Run the structured debugging loop for a Next.js 16.2-style project. Use for runtime errors, navigation issues, auth regressions, hydration mismatches, route-handler bugs, proxy issues, or when raw logs need to be turned into a concrete fix plan.
+description: Run the structured debugging loop for a Next.js 16.2-style project. Use for runtime errors, navigation issues, auth regressions, hydration mismatches, route-handler bugs, proxy issues, or when raw logs need to be turned into a concrete fix plan. Trigger whenever the user reports something broken, pastes an error or stack trace, says "doesn't work", "keeps failing", "weird behavior", or describes any unexpected runtime outcome, even if they don't call it a "bug".
 ---
 
 # Debug Loop
 
 Use this workflow when the goal is root-cause isolation, not feature delivery.
+
+Do not jump to fixes before the evidence points to a likely root cause.
 
 ## Read first
 - `.claude/TODO.md` if the issue is already tracked
@@ -28,9 +30,10 @@ Use this workflow when the goal is root-cause isolation, not feature delivery.
    - server function logs
    - `next-browser` when available
 6. Isolate one likely root cause at a time.
-7. Apply the smallest fix that explains the evidence.
-8. Re-run lint and the narrowest regression check that proves the fix.
-9. Summarize:
+7. If the evidence is still thin, keep investigating instead of patching by instinct.
+8. Apply the smallest fix that explains the evidence.
+9. Re-run lint and the narrowest regression check that proves the fix.
+10. Summarize:
    - root cause
    - fix
    - residual risk

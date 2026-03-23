@@ -25,6 +25,7 @@ Useful project commands:
 - `/dev-docs`
 - `/dev-docs-update`
 - `/route-smoke`
+- `/verify-change`
 
 Useful read-only agents:
 - `next-reviewer`
@@ -35,6 +36,8 @@ Useful read-only agents:
 Working habits:
 - Start multi-file or high-risk work in Plan Mode first
 - For risky work, stop after the first draft plan and run `/plan-cross-check` before implementation
+- Use `/verify-change` before claiming work is done
+- Use `/review-loop` for the deeper pre-merge review, especially after `/verify-change` flags risk
 - Use `/clear` between major phases and `/compact` before context gets crowded
 - Keep `/mcp` lean and disable unused servers
 - Offload high-volume tasks to local scripts and summarize results back into the chat
